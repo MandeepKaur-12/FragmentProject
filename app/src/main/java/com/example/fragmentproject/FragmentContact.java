@@ -26,13 +26,17 @@ public class FragmentContact extends Fragment {
 
 
     public FragmentContact() {
+        //  Required empty constructor (so that the fragment can be instantiated)
     }
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //  Inflate the layout of the fragment
         view = inflater.inflate(R.layout.contact_fragment, container, false);
 
+
+        //  Attach adapter to RecyclerView
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_id);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), contactsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -42,9 +46,10 @@ public class FragmentContact extends Fragment {
     }
 
 
+    //  Initial creation of a fragment
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(true);                        //  Options menu in the fragment
         super.onCreate(savedInstanceState);
 
         contactsList = new ArrayList<>();
@@ -54,6 +59,7 @@ public class FragmentContact extends Fragment {
         int[] photos = {R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6, R.drawable.c7, R.drawable.c8, R.drawable.c9, R.drawable.c10, R.drawable.c11, R.drawable.c12};
 
 
+        //  Add items to RecyclerView list
         for(int i =0; i<names.length; i++){
             contactsList.add((new Contacts(names[i], phone[i], photos[i])));
         }
@@ -61,7 +67,7 @@ public class FragmentContact extends Fragment {
     }
 
 
-    //  Inflate
+    //  Inflate the menu
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
 
@@ -69,7 +75,7 @@ public class FragmentContact extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    //  When menu items are clicked
+    //  Event handling when menu items are clicked
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

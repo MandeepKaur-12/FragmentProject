@@ -1,5 +1,5 @@
 package com.example.fragmentproject;
-
+//  Required empty constructor (so that the fragment can be instantiated)
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -7,15 +7,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
 
 public class FragmentCall extends Fragment {
 
@@ -23,39 +20,38 @@ public class FragmentCall extends Fragment {
 
 
     public FragmentCall() {
+        //  Required empty constructor (so that the fragment can be instantiated)
     }
-
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+       //  Inflate the layout of the fragment
         view = inflater.inflate(R.layout.call_fragment, container, false);
-
-
-
         return view;
     }
 
-    //  Options menu in the fragment
+
+    //  Initial creation of a fragment
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(true);                        //  Options menu in the fragment
         super.onCreate(savedInstanceState);
     }
 
-    //  Inflate
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
 
-        inflater.inflate(R.menu.menu, menu);
-        menu.findItem(R.id.action_add).setVisible(false);
+        inflater.inflate(R.menu.menu, menu);                   //  Inflate the menu
+        menu.findItem(R.id.action_add).setVisible(false);      // Hide the Add item in menu
 
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    //  When menu items are clicked
+
+    //  Event handling when menu items are clicked
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

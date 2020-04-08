@@ -24,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager)findViewById(R.id.view_pager_id);
         adapter = new ViewPageAdapter(getSupportFragmentManager());
 
-        //   Add tab (fragments)
+        //   Add tabs (fragments)
         adapter.addFragment(new FragmentCall(),"");
         adapter.addFragment(new FragmentContact(),"");
         adapter.addFragment(new FragmentFav(),"");
 
+        //  Attach ViewPageAdapter to the ViewPager
         viewPager.setAdapter(adapter);
+
+        //  Link the TabLayout to the ViewPager
         tabLayout.setupWithViewPager(viewPager);
 
         //  Set Icons
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void onChangeTab(int position){
+    private void onChangeTab(int position){                    //  Change tab icon colors
 
         if(position == 0){
             tabLayout.getTabAt(0).setIcon(R.drawable.ic_call_white);

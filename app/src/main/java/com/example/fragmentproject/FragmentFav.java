@@ -17,30 +17,37 @@ public class FragmentFav extends Fragment {
 
     View view;
 
-    public FragmentFav() {
+    public FragmentFav() {                 //  Required empty constructor (so that the fragment can be instantiated)
     }
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
 
+        //  Inflate the layout of the fragment
         view = inflater.inflate(R.layout.fav_fragment, container, false);
-
         return view;
     }
 
-    //  Inflate
+
+    //  Initial creation of a fragment
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);                        //  Options menu in the fragment
+        super.onCreate(savedInstanceState);
+    }
+
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
 
-        inflater.inflate(R.menu.menu, menu);
-        menu.findItem(R.id.action_more).setVisible(false);
+        inflater.inflate(R.menu.menu, menu);                  //  Inflate the menu
+        menu.findItem(R.id.action_more).setVisible(false);    // Hide the More item
 
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    //  When menu items are clicked
+    //  Event handling when menu items are clicked
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

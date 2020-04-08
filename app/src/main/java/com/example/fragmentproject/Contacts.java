@@ -1,12 +1,12 @@
 package com.example.fragmentproject;
 
-public class Contacts {
+public class Contacts {                    //  ViewModel class for RecyclerView
 
     private  String name;
     private String phone;
     private int photo;
 
-    public Contacts() {
+    public Contacts() {         // Default constructor
     }
 
     public Contacts(String name, String phone, int photo) {

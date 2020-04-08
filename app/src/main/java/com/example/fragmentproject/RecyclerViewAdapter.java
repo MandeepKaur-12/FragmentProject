@@ -31,11 +31,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.data = data;
     }
 
+
+    // Create new views
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
-        v = LayoutInflater.from(context).inflate(R.layout.items_contact, parent, false);
+        v = LayoutInflater.from(context).inflate(R.layout.items_contact, parent, false);             //Inflate the view of List Items
         final MyViewHolder viewHolder = new MyViewHolder(v);
+
 
         //  Dialog
         myDialog = new Dialog(context);
@@ -56,15 +59,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 myDialog.show();
 
-
-
             }
         });
-
 
         return viewHolder;
     }
 
+
+    //   Bind the ViewHolder to the adapter
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
@@ -79,13 +81,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return data.size();
     }
 
+
+    // Provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private LinearLayout itemLayout;
+        private LinearLayout itemLayout;            // Layout for Dialog
         private TextView tv_name;
         private TextView tv_phone;
         private ImageView img_photo;
-
 
 
         public MyViewHolder(@NonNull View itemView) {
