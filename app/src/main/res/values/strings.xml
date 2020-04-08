@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">FragmentProject</string>
+
+    <array name="names">
+        <item>Abhishek Mehta</item>
+        <item>Naina</item>
+        <item>Amandeep Singh</item>
+        <item>Ishita</item>
+        <item>Priya Sharma</item>
+        <item>Kunal </item>
+        <item>Aakash Jain</item>
+        <item>Natasha</item>
+        <item>Vani </item>
+        <item>Krish</item>
+        <item>Lakshay</item>
+        <item>Mridul Kumar</item>
+    </array>
+
+    <array name="numbers">
+        <item>"9632559452"</item>
+        <item>"+447563438543"</item>
+        <item>"7894338209"</item>
+        <item>"9632909719"</item>
+        <item>"9980873313"</item>
+        <item>"8197303126"</item>
+        <item>"9642650009"</item>
+        <item>"8951789327"</item>
+        <item>"9205464735"</item>
+        <item>"7987368321"</item>
+        <item>"9899944310"</item>
+        <item>"9457239975"</item>
+    </array>
+
+
+
+</resources>
